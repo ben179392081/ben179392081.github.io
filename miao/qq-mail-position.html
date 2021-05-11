@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  *{
+    margin: 0px;
+    padding: 0px;
+  }
+ .head{
+   height: 100px;
+   background-color:magenta 
+ }
+ .left{
+   width: 200px;
+   height: calc(100vh - 100px);
+   background-color: skyblue;
+ }
+ .right{
+   position: fixed;
+   top: 100px;
+   left: 200px;
+   background-color:yellow;
+   width: calc(100vw - 200px);
+   height: calc(100vh - 100px);
+ }
+</style>
+<div> 
+  <section class="head"></section>
+  <section class="left"></section>
+  <section class="right">a</section>
+</div>
+
+</body>
+</html> 
