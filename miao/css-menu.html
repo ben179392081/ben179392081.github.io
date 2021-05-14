@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    width: 50px;
+  }
+
+  .search {
+    width: 100vw;
+    height: 70px;
+
+    background-color: #e3e4e5;
+  }
+
+  .area {
+    position: relative;
+    right: 0px;
+    display: inline-block;
+    height: 40px;
+    width: 60px;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 20px;
+    margin-left: 30px;
+    padding-bottom: 10px;
+  }
+
+  .area img {
+
+    width: 20px;
+    height: 30px;
+  }
+
+  .area .sh {
+    display: none;
+    height: 30px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    transition: 2s;
+  }
+
+  .area:hover .sh {
+    background-color: #fff;
+    display: block;
+    margin-top: 10px;
+    height: 30px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    transition: 5s;
+  }
+
+  .area:hover {
+    background-color: #fff;
+  }
+
+  .area .city {
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    display: none;
+    height: 300px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+    transition: 2s;
+  }
+</style>
+
+<body>
+  <div class="search">
+    <div class="area">
+      <img src="images/坐标.png" alt=""> 地区
+      <ui class="sh">
+        <li>福建</li>
+        <li>浙江</li>
+        <li>上海</li>
+        <li>江苏</li>
+        <li>安徽</li>
+        <li>广东</li>
+      </ui>
+    </div>
+  </div>
+</body>
+
+</html>
