@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  table {
+    width: 90px;
+    height: 90px;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+
+  th {
+
+    border: 2px inset #0000f0;
+  }
+
+  th:hover {
+    border: 2px solid red;
+  }
+
+
+
+  .a th {
+    position: relative;
+    border: 2px solid #0000f0;
+  }
+
+  .a th:hover::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid red
+  }
+
+  div {
+    width: 90px;
+    height: 90px;
+
+  }
+
+  section {
+    width: 31px;
+    height: 31px;
+    float: left;
+    text-align: center;
+    line-height: 31px;
+    border: 2px solid #0000f0;
+    margin: 0 -2px -2px 0;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  section:hover {
+    border: 2px solid red;
+    z-index: 1;
+  }
+</style>
+
+<body>
+  <table>
+    <tr>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+    <tr>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+    </tr>
+    <tr>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+  </table>
+  <table class="a">
+    <tr>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+    </tr>
+    <tr>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+    </tr>
+    <tr>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+    </tr>
+  </table>
+
+
+  <div>
+    <section>1</section>
+    <section>2</section>
+    <section>3</section>
+    <section>4</section>
+    <section>5</section>
+    <section>6</section>
+    <section>7</section>
+    <section>8</section>
+    <section>9</section>
+  </div>
+</body>
+
+
+
+
+</html>
