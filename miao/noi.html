@@ -351,6 +351,60 @@
     } else {
       console.log("N")
     }
+</script>
+  <script script id="ch0104/18">
+    var x = +(prompt(""))
+    var y = +(prompt(""))
+    if (x >= -1 && x <= 1) {
+      if (y >= -1 && y <= 1) {
+        console.log("yes")
+      }
+    } else {
+      console.log("no")
+    }
+  </script>
+  <script script id="ch0104/19">
+    var x = +(prompt(""))
+    var z = (prompt(""))
+    var y = +(prompt(""))
+    if (y == 0) {
+      if (z == "/") {
+        console.log("Divided by zero!")
+      }
+    }
+    if (z != "/" || z != "+" || z != "-" || z != "*") {
+      console.log("Invalid operator!")
+    } if (z == "/") {
+      console.log(x / y)
+    }
+    if (z == "+") {
+      console.log(x + y)
+    }
+    if (z == "-") {
+      console.log(x - y)
+    }
+    if (z == "*") {
+      console.log(x * y)
+    }
+  </script>
+  <script script id="ch0104/20">
+    var a = +(prompt(""))
+    var b = +(prompt(""))
+    var c = +(prompt(""))
+    if (b * b - 4 * a * c == 0) {
+      x = (-b + Math.sqrt(b * b - 4 * a * c)) / (2 * a)
+      console.log("x1=x2=" + x)
+    }
+    if (b * b - 4 * a * c < 0) {
+      console.log("x1=" + (- b / (2 * a)).toFixed(5) + '+' + (Math.sqrt((4 * a * c - b * b)) / (2 * a)).toFixed(5) + "i", "x2=" + (- b / (2 * a)).toFixed(5) + '-' + (Math.sqrt((4 * a * c - b * b)) / (2 * a)).toFixed(5) + "i")
+    }
+  </script>
+  <script script id="ch0104/21">
+    var n = +(prompt(""))
+    var x = +(prompt(""))
+    var y = +(prompt(""))
+    if (n - y / x >= 0)
+      console.log(Math.floor(n - y / x))
   </script>
 <body>
 
