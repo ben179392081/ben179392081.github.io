@@ -115,15 +115,242 @@
 </script>
 <script id="ch0103/19">
   var A = Number(prompt("A"))
-  var B = Number(prompt("B"))
-
+                                                                                                                                          var B = Number(prompt("B"))
   console.log(A * B)
 </script>
 <script id="ch0103/20">
-  var n = Number(prompt("n"))
-
+                                                                                                        var n = Number(prompt("n"))
           console.log(Math.pow(2, n))
         </script>
+  <script id="ch0103/19">
+    var A = Number(prompt("A"))
+    var B = Number(prompt("B"))
+    console.log(A * B)
+  </script>
+  <script id="ch0104/01">
+    var n = Number(prompt(""))
+    if (n > 0) {
+      console.log("positive")
+    } else if (n == 0) (
+      console("zero")
+    )else {
+      console.log("negative")
+    }
+  </script>
+  <script id="ch0104/02">
+    var n = Number(prompt(""))
+    if (n < 0) {
+      n = (-n)
+    }
+    console.log(n.toExponential(2))
+  </script>
+  <script id="ch0104/03">
+    var n = Number(prompt(""))
+    if (n % 2 == 1) {
+      console.log("odd")
+    }
+    else {
+      console.log("even")
+    }
+  </script>
+  <script script id="ch0104/04">
+    var n = (prompt(""))
+    if (n) {
+      console.log("YES")
+    }
+    else {
+      console.log("NO")
+    }
+  </script>
+  <script script id="ch0104/05">
+    var x = +(prompt(""))
+    var y = +(prompt(""))
+    if (x > y) {
+      console.log(">")
+    }
+    else if (x == y) {
+      console.log("=")
+    }
+    else {
+      console0.log("<")
+    }
+  </script>
+  <script script id="ch0104/06">
+    var x = +(prompt(""))
+    if (x < 10) {
+      console.log(0)
+    }
+    else {
+      console.log(1)
+    }
+  </script>
+  <script script id="ch0104/07">
+    var xinyun = +(prompt(""))
+    var guli = +(prompt(""))
+    if (xinyun >= 10) {
+      console.log(1)
+    }
+    else if (guli >= 20) {
+      console.log(1)
+    }
+    else {
+      console.log(0)
+    }
+  </script>
+  <script script id="ch0104/08">
+    var n = +(prompt(""))
+    if (n % 3 == 0) {
+      if (n % 5 == 0) {
+        console.log("YES")
+      }
+    } else {
+      console.log("NO")
+    }
+  </script>
+  <script script id="ch0104/09">
+    var n = +(prompt(""))
+    if (n % 3 == 0) {
+      if (n % 5 == 0) {
+        if (n % 7 == 0) {
+          console.log(3, 5, 7)
+        }
+      }
+    } if (n % 3 == 0) {
+      if (n % 5 == 0) {
+        if (n % 7 != 0) {
+          console.log(3, 5)
+        }
+      }
+    }
+    if (n % 3 == 0) {
+      if (n % 5 != 0) {
+        if (n % 7 == 0) {
+          console.log(3, 7)
+        }
+      }
+    }
+    if (n % 3 != 0) {
+      if (n % 5 == 0) {
+        if (n % 7 == 0) {
+          console.log(5, 7)
+        }
+      }
+    }
+    if (n % 3 != 0) {
+      if (n % 5 != 0) {
+        if (n % 7 != 0) {
+          console.log("n")
+        }
+      }
+    }
+  </script>
+  <script script id="ch0104/10">
+    var n = +(prompt(""))
+    var y = +(prompt(""))
+    if (n < 60) {
+      console.log(0)
+    } else if (y < 60) {
+      console.log(0)
+    } else {
+      console.log(1)
+    }
+  </script>
+  <script script id="ch0104/11">
+    var n = +(prompt(""))
+    if (n == 1) {
+      console.log("NO")
+    } else if (n == 3) {
+      console.log("NO")
+    } else if (n == 5) {
+      console.log("NO")
+    }
+    else {
+      console.log("YES")
+    }
+  </script>
+  <script script id="ch0104/12">
+    var n = +(prompt(""))
+    X1 = n / 1.2
+    X2 = (n / 3) + 50
+    if (X1 > X2) {
+      console.log("Bike")
+    } else {
+      console.log("Walk")
+    }
+  </script>
+  <script script id="ch0104/13">
+    var n = +(prompt(""))
+    x = n
+    if (x < 5) {
+      if (x >= 0) {
+        y = -x + 2.5
+        console.log(y.toFixed(3))
+      }
+    } if (x < 10) {
+      if (x >= 5) {
+        y = 2 - 1.5 * (x - 3) * (x - 3)
+        console.log(y.toFixed(3))
+      }
+    }
+    else if (x < 20) {
+      y = (x / 2) - 1.5
+      console.log(y.toFixed(3))
+    }
+  </script>
+  <script script id="ch0104/14">
+    var n = +(prompt(""))
+    var y = +(prompt("加急"))
+    if (n - 1000 > 0) {
+      if (((n - 1000) / 500) < 1) {
+        u = 4 + 8 + 5
+        console.log(u)
+      }
+    } else {
+      console.log(Math.ceil((n - 1000) / 500) * 4 + 13)
+    }
+  </script>
+  <script script id="ch0104/15">
+    var n = +(prompt(""))
+    var y = +(prompt(""))
+    var z = +(prompt(""))
+    if (n > y) {
+      if (n > z) {
+        console.log(n)
+      }
+    }
+    if (y > n) {
+      if (y > z) {
+        console.log(y)
+      }
+    }
+    if (z > n) {
+      if (z > y) {
+        console.log(z)
+      }
+    }
+  </script>
+  <script script id="ch0104/16">
+    var n = +(prompt(""))
+    var y = +(prompt(""))
+    var z = +(prompt(""))
+    if (n + y > z) {
+      if (n + z > y) {
+        if (z + y > n) {
+          console.log("YES")
+        }
+      }
+    } else {
+      console.log("NO")
+    }
+  </script>
+  <script script id="ch0104/17">
+    var n = +(prompt(""))
+    if (n % 400 == 0 && n % 100 != 0 || n % 4 == 0) {
+      console.log("Y")
+    } else {
+      console.log("N")
+    }
+  </script>
 <body>
 
 </body>
