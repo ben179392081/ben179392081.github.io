@@ -412,7 +412,7 @@
     if (n - y / x >= 0)
       console.log(Math.floor(n - y / x))
 </script>
-  <script script id="ch015/01">
+  <script script id="ch0105/01">
     var a = +(prompt("a"))
     var x = 0
     var year = 0
@@ -423,7 +423,7 @@
     }
     console.log((year / a).toFixed(2))
   </script>
-  <script script id="ch015/02">
+  <script script id="ch0105/02">
     var x = 0
     var money = 0
     while (x < 12) {
@@ -433,7 +433,7 @@
     }
     console.log("$" + (money / 12).toFixed(2))
   </script>
-  <script script id="ch015/03">
+  <script script id="ch0105/03">
     var n = +(prompt("n行"))
     var i = 0
     var sum = 0
@@ -444,7 +444,7 @@
     }
     console.log((sum / n).toFixed(4))
   </script>
-  <script script id="ch015/04">
+  <script script id="ch0105/04">
     var n = +(prompt("有n个整数"))
     var i = 0
     var sum = 0
@@ -455,7 +455,7 @@
     }
     console.log(sum, (sum / n).toFixed(5))
   </script>
-  <script script id="ch015/05">
+  <script script id="ch0105/05">
     var i = 0
     var max = 0
     while (i < n) {
@@ -467,7 +467,7 @@
     }
     console.log(max)
   </script>
-  <script script id="ch015/06">
+  <script script id="ch0105/06">
     var i = 0
     var max = -Infinity
     var min = Infinity
@@ -483,7 +483,7 @@
     }
     console.log(max - min)
   </script>
-  <script script id="ch015/07">
+  <script script id="ch0105/07">
     var n = +(prompt("参加天数"))
     var i = 0
     var agsum = 0
@@ -501,7 +501,7 @@
     var sum = ausum + agsum + cusum
     console.log(ausum, agsum, cusum, sum)
   </script>
-  <script script id="ch015/08">
+  <script script id="ch0105/08">
     var n = +(prompt("整数n"))
     var i = 1
     sum = 0
@@ -512,7 +512,7 @@
     }
     console.log((n - 2) * 180 - sum)
   </script>
-  <script script id="ch015/09">
+  <script script id="ch0105/09">
     var m = +(prompt("m"))
     var n = +(prompt("n"))
     var i = m
@@ -528,7 +528,7 @@
     }
     console.log(sum)
   </script>
-  <script script id="ch015/10">
+  <script script id="ch0105/10">
     var m = +(prompt("m"))
     var n = +(prompt("n"))
     var i = m
@@ -544,7 +544,7 @@
     }
     console.log(sum)
   </script>
-  <script script id="ch015/11">
+  <script script id="ch0105/11">
     var i = 0
     sum1 = 0
     sum5 = 0
@@ -563,7 +563,7 @@
       i++
     } console.log(sum1, sum5, sum10)
   </script>
-  <script script id="ch015/12">
+  <script script id="ch0105/12">
     var N = +(prompt("N个整数"))
     var m = +(prompt("m"))
     var i = 0
@@ -576,7 +576,7 @@
       i++
     } console.log(sum)
   </script>
-  <script script id="ch015/13">
+  <script script id="ch0105/13">
     var a = +(prompt("a个整数"))
     var n = +(prompt("乘方"))
     var sum = 1
@@ -585,7 +585,7 @@
     }
     console.log(sum)
   </script>
-  <script script id="ch015/14">
+  <script script id="ch0105/14">
     var x = +(prompt("人口基数"))
     var Y = +(prompt("年数"))
     var pop = x
@@ -594,7 +594,7 @@
     }
     console.log(pop.toFixed(4))
   </script>
-  <script script id="ch015/15">
+  <script script id="ch0105/15">
     var R = +(prompt("复合年利率为R"))
     var M = +(prompt("总值为M"))
     var Y = +(prompt("投资Y年"))
@@ -604,23 +604,20 @@
     }
     console.log(Math.floor(money))
   </script>
-  <script script id="ch015/16">
+  <script script id="ch0105/16">
     var money = +(prompt("年薪N万"))
     var prise = +(prompt("百分之K增长"))
-    sum = 200
-    debugger
+            sum = 200
     for (var i = 1; i * money <= sum; i++) {
       sum = ((prise / 100) + 1) * sum
     }
     console.log(i)
   </script>
-  <script script id="ch015/17">
-    var money = +(prompt("年薪N万"))
-    var prise = +(prompt("百分之K增长"))
-    sum = 200
-    debugger
-    for (var i = 1; i * money <= sum; i++) {
-      sum = ((prise / 100) + 1) * sum
+<script script id="ch0105/17">
+  var k = +(prompt("正整数k"))
+  sum = 1
+  for (var i = 1; i < k; i++) {
+    sum = sum
     }
     console.log(i)
   </script>
