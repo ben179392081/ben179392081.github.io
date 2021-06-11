@@ -456,28 +456,30 @@
     console.log(sum, (sum / n).toFixed(5))
   </script>
   <script script id="ch0105/05">
-    var i = 0
-    var max = 0
-    while (i < n) {
-      var x = +(prompt("学生的成绩"))
-      if (x > max) {
-        max = x
-      }
-      i++
-    }
-    console.log(max)
+                  var n = +(prompt("学生人数"))
+                    var i = 0
+                    var max = 0
+                    while (i < n) {
+                      var x = +(prompt("学生的成绩"))
+                      if (x > max) {
+                        max = x
+                      }
+                      i++
+                    }
+                    console.log(max)
   </script>
   <script script id="ch0105/06">
+                var n = +(prompt("序列的个数n"))
     var i = 0
     var max = -Infinity
     var min = Infinity
     while (i < n) {
-      var x = +(prompt("学生的成绩"))
+      var x = +(prompt("非负整数"))
       if (x > max) {
         max = x
       }
       if (x < min) {
-        max = x
+        min = x
       }
       i++
     }
@@ -545,6 +547,7 @@
     console.log(sum)
   </script>
   <script script id="ch0105/11">
+                var k = +(prompt("k个整数"))
     var i = 0
     sum1 = 0
     sum5 = 0
@@ -617,9 +620,29 @@
   var k = +(prompt("正整数k"))
   sum = 1
   for (var i = 1; i < k; i++) {
-    sum = sum
+    sum = sum + sum
     }
     console.log(i)
+  </script>
+  <script script id="ch0105/18">
+    var n = +(prompt("整数n"))
+    var x = +(prompt("鸡尾酒总病例数"))
+    var y = +(prompt("疗效有效的病例数"))
+    var coc = y / x
+    sum = 1
+    for (var i = 0; i < n; i++) {
+      var x1 = +(prompt("其他总病例数"))
+      var y1 = +(prompt("其他疗效有效的病例数"))
+      if (coc - y1 / x1 > 0.05) {
+        console.log("better")
+      }
+      else if (coc - y1 / x1 < 0.05) {
+        console.log("worse")
+      } else {
+        console.log("same")
+      }
+      i++
+    }
   </script>
 <body>
 
