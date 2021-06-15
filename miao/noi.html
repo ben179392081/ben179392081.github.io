@@ -618,34 +618,259 @@
   </script>
 <script script id="ch0105/17">
   var k = +(prompt("正整数k"))
-  sum = 1
+   var a = 1
+   var b = 1
   for (var i = 1; i < k; i++) {
-    sum = sum + sum
+    c = a + b
+    a = b
+    b = c
     }
-    console.log(i)
+    console.log(a)
   </script>
-  <script script id="ch0105/18">
+<script script id="ch0105/18">
     var n = +(prompt("整数n"))
     var x = +(prompt("鸡尾酒总病例数"))
     var y = +(prompt("疗效有效的病例数"))
     var coc = y / x
-    sum = 1
-    for (var i = 0; i < n; i++) {
+          for (var i = 1; i < n; i++) {
       var x1 = +(prompt("其他总病例数"))
       var y1 = +(prompt("其他疗效有效的病例数"))
-      if (coc - y1 / x1 > 0.05) {
+          eff = y1 / x1
+          if (eff - coc > 0.05) {
         console.log("better")
       }
-      else if (coc - y1 / x1 < 0.05) {
+        else if (coc - eff > 0.05) {
         console.log("worse")
       } else {
         console.log("same")
-      }
-      i++
+        }
     }
-  </script>
-<body>
-
+</script>
+<script script id="ch0105/19">
+  var n = +(prompt("屋顶数n"))
+  var time = 0
+  for (var i = 0; i < n; i++) {
+    var x = +(prompt("坐标x"))
+    var y = +(prompt("坐标y"))
+    var p = +(prompt("人数"))
+    shipTime = (Math.sqrt(x * x + y * y) / 50) * 2 + p + Math.ceil(0.5 * p)
+    time += shipTime
+  }
+    console.log(time)
+</script>
+<script script id="ch0105/20">
+    var h = +(prompt("初始高度"))
+    var h1 = h
+    var bon = 0
+    for (var i = 0; i < 10; i++) {
+      h = h / 2
+      bon += h * 2
+    }
+    console.log(bon + h1, h.toFixed(7))
+</script>
+<script script id="ch0105/21">
+    var n = +(prompt("正整数"))
+    var sum = 0
+    for (var i = 0; ; i++) {
+      if (n % 2 != 0) {
+        console.log(n + "*3+1=" + ((n * 3) + 1))
+        n = (n * 3) + 1
+      }
+      if (n % 2 == 0) {
+        sum
+        console.log(n + "/2=" + (n / 2))
+        n = n / 2
+      }
+      if (n == 1) {
+        break
+      }
+    }
+    console.log("End")
+</script>
+<script script id="ch0105/22">
+ var sum = 0
+   var m = 0
+   for (var i = 1; i <= 12; i++) {
+     var n = +(prompt("预算"))
+     m += 300
+     if (m - n >= 100) {
+       sum += m - n - (m - n) % 100
+       m = (m - n) % 100
+     }
+     else if (m - n < 100) {
+       m = m - n
+     }
+     else if (n > m) {
+       console.log(-i)
+       break
+     }
+   }
+    console.log(sum * 1.2 + m)
+</script>
+<script script id="ch0105/23">
+  var n = +(prompt("一天取药的人数n"))
+    var m1 = m
+    var sum = 0
+    for (var i = 0; i < n; i++) {
+      var x = +(prompt("每个病人希望取走的药品数量"))
+      if (x <= m1) {
+        m1 = m1 - x
+        sum += 1
+      }
+    }
+    console.log(n - sum)
+</script>
+<script script id="ch0105/24">
+  var n = +(prompt("测量次数"))
+    var sum = 0
+    for (var i = 0; i < n; i++) {
+      var x = +(prompt("收缩压"))
+      var y = +(prompt("舒张压"))
+      if (x > 90 && x < 140 && y >= 60 && y <= 90) {
+        sum += 1
+      }
+    }
+    console.log(sum)
+</script>
+<script script id="ch0105/25">
+        for (var a = 81; a <= 342; a++) {
+          var a1 = a % 7
+          var a2 = (a - a1) / 7 % 7
+          var a3 = (a - a1 - a2 * 7) / 49 % 7
+          var b1 = a % 9
+          var b2 = (a - b1) / 9 % 9
+          var b3 = (a - b1 - b2 * 9) / 81 % 9
+          if (a1 == b3 && a2 == b2 && a3 == b1) {
+            console.log(a);
+            break
+          }
+        }
+</script>
+<script script id="ch0105/26">
+  var n = +(prompt("个数"))
+  var sum = 0
+  for (var i = 0; i < n; i++) {
+    var y = +(prompt("四位数数字"))
+    y1 = y % 10
+    y2 = (y % 100 - y1) / 10
+    y3 = (y % 1000 - y2 - y1) / 100
+    y4 = Math.floor(y / 1000)
+    if (y1 - y4 - y3 - y2 > 0) {
+      sum += 1
+    }
+  } console.log(sum)
+</script>
+<script script id="ch0105/28">
+  var n = +(prompt(""))
+    var arr = n.toString()
+    for (var i = 0; i < arr.length; i++) {
+      var a = arr[arr.length - 1 - i]
+      console.log(a)
+    }
+</script>
+<script script id="ch0105/29">
+  var n = +(prompt(""))
+  var str = n.toString()
+  var arr = str.split("")
+  if (arr[0] != "-") {
+    var a = Number(arr.reverse().join(""))
+    console.log(a)
+  } else if (arr[0] == "-") {
+    delete arr[0]
+    var a = Number(arr.reverse().join(""))
+    console.log(a)
+  }
+</script>
+<script script id="ch0105/30">
+  var m = +(prompt(""))
+  var k = +(prompt("个数"))
+  var str = m.toString()
+  var sum = 0
+  for (var i = str.length; i >= 0; i--) {
+    if (str[i - 1] == k) (
+      sum += 1
+    )
+  }
+  if (m % 19 == 0 && sum == k) {
+    console.log("YES")
+  } else {
+    console.log("NO")
+  }
+</script>
+<script script id="ch0105/32">
+  var n = +(prompt(""))
+  var a = 2 
+  var b = 1
+  sum = a / b
+  for (var i = 1 ;i< n; i++){
+    a = b + a 
+    b = a - b
+    sum += a / b
+  } console.log(sum.toFixed(4))
+</script>
+<script script id="ch0105/33">
+  var n = +(prompt(""))
+  sum = 0
+  debugger
+  for (var i = 1; i <= n; i++) {
+    if (i % 2 != 0) {
+      sum += 1 / i
+    }
+    if (i % 2 == 0) {
+      sum -= 1 / i
+    }
+  } console.log(sum.toFixed(4))
+</script>
+<script script id="ch0105/34">
+ function jiecheng(n) {
+   if (n == 1) {
+     return 1
+   }
+       else {
+         return n * jiecheng(n - 1)
+       }
+     }
+     var n = +(prompt(""))
+     var sum = 0
+     for (n; n > 0; n--) {
+       sum += jiecheng(n)
+     }
+     console.log(sum)
+</script>
+<script  id="ch0105/35">
+  function jiecheng(n) {
+      if (n == 1) {
+        return 1
+      }
+      else {
+        return n * jiecheng(n - 1)
+      }
+    }
+    var n = +(prompt(""))
+    var sum = 0
+    for (n; n > 0; n--) {
+      sum += (1 / jiecheng(n))
+    }
+        console.log((sum + 1).toFixed(10))
+</script>
+<script id="ch0105/36">
+  var x = +(prompt(""))
+  var n = +(prompt(""))
+  var sum = 0
+  for (n; n > 0; n--) {
+    sum += Math.pow(x, n)
+  }
+    console.log((sum + 1).toFixed(2))
+</script>
+<script id="ch0105/37">
+  var x = +(prompt(""))
+  var n = +(prompt(""))
+  var sum = 0
+  for (n; n > 0; n--) {
+    sum += Math.pow(x, n)
+  }
+    console.log((sum + 1).toFixed(2))
+</script>
 </body>
 
 </html>
