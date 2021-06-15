@@ -662,11 +662,11 @@
     var h = +(prompt("初始高度"))
     var h1 = h
     var bon = 0
-    for (var i = 0; i < 10; i++) {
+                                                                          for (var i = 1; i < 10; i++) {
       h = h / 2
       bon += h * 2
     }
-    console.log(bon + h1, h.toFixed(7))
+                                                                          console.log((bon + h1).toFixed(4), Number((h / 2).toFixed(7)))
 </script>
 <script script id="ch0105/21">
     var n = +(prompt("正整数"))
@@ -688,26 +688,31 @@
     console.log("End")
 </script>
 <script script id="ch0105/22">
- var sum = 0
-   var m = 0
-   for (var i = 1; i <= 12; i++) {
-     var n = +(prompt("预算"))
-     m += 300
-     if (m - n >= 100) {
-       sum += m - n - (m - n) % 100
-       m = (m - n) % 100
-     }
-     else if (m - n < 100) {
-       m = m - n
-     }
-     else if (n > m) {
-       console.log(-i)
-       break
-     }
-   }
+    var sum = 0
+    var m = 0
+                                                                var ok = true
+    for (var i = 1; i <= 12; i++) {
+      var n = +(prompt("预算"))
+      m += 300
+      if (m - n >= 100) {
+        sum += m - n - (m - n) % 100
+        m = (m - n) % 100
+      }
+    else if (m - n < 100 && m - n >= 0) {
+      m = m - n
+    }
+    else if (n > m) {
+      console.log(-i)
+        ok = false
+      break
+    }
+  }
+                                                                if (ok) {
     console.log(sum * 1.2 + m)
+                                                              }
 </script>
 <script script id="ch0105/23">
+  var m = +(prompt("m"))
   var n = +(prompt("一天取药的人数n"))
     var m1 = m
     var sum = 0
@@ -741,7 +746,7 @@
           var b2 = (a - b1) / 9 % 9
           var b3 = (a - b1 - b2 * 9) / 81 % 9
           if (a1 == b3 && a2 == b2 && a3 == b1) {
-            console.log(a);
+            console.log("不提供");
             break
           }
         }
@@ -769,17 +774,19 @@
     }
 </script>
 <script script id="ch0105/29">
-  var n = +(prompt(""))
-  var str = n.toString()
-  var arr = str.split("")
-  if (arr[0] != "-") {
-    var a = Number(arr.reverse().join(""))
-    console.log(a)
-  } else if (arr[0] == "-") {
-    delete arr[0]
-    var a = Number(arr.reverse().join(""))
-    console.log(a)
-  }
+   var n = +(prompt(""))
+    var sign = 1
+    if (n < 0) {
+      sign = -1
+      n = -n
+    }
+                                                            var result = 0
+                                                            do {
+                                                              var digit = n % 10
+                                                              result = result * 10 + digit
+                                                              n = (n - digit) / 10
+                                                            } while (n > 0)
+                                                            console.log(result * sign)
 </script>
 <script script id="ch0105/30">
   var m = +(prompt(""))
@@ -862,14 +869,124 @@
   }
     console.log((sum + 1).toFixed(2))
 </script>
-<script id="ch0105/37">
-  var x = +(prompt(""))
-  var n = +(prompt(""))
+<script id="ch0105/38">
+
+</script>
+<script id="ch0105/39">
+  var n = Number(prompt(""))
   var sum = 0
-  for (n; n > 0; n--) {
-    sum += Math.pow(x, n)
+  for (var i = 1; i <= n; i++) {
+    if (i % 7 == 0) {
+      continue
+    } else {
+      var ok = true
+      var x = i
+      do {
+        var digit = x % 10
+        if (digit == 7) {
+          ok = false
+          break
+        } x = (x - digit) / 10
+      } while (x)
+    }
+    if (ok) {
+      sum += i * i
+    }
   }
-    console.log((sum + 1).toFixed(2))
+  console.log(sum)
+</script>
+<script id="ch0105/40">
+  var n = Number(prompt(""))
+  var sum = 0
+  for (var i = 1; i <= n; i++) {
+    var x = i
+    do {
+      var digit = x % 10
+      if (digit == 1) {
+        sum++
+      } x = (x - digit) / 10
+    } while (x)
+  } console.log(sum)
+</script>
+<script id="ch0105/41">
+  var L = Number(prompt("L"))
+  var R = Number(prompt("R"))
+  var sum = 0
+  for (var i = L; i <= R; i++) {
+    var x = i
+    do {
+      var digit = x % 10
+      if (digit == 2) {
+        sum++
+      } x = (x - digit) / 10
+    } while (x)
+  } console.log(sum)
+</script>
+<script id="ch0105/42">
+  var w = Number(prompt())
+  var h = Number(prompt())
+  var char = prompt()
+  var fill = Number(prompt())
+  for (var i = 1; i <= h; i++) {
+    for (var n = 1; n <= w; n++) {
+      if (fill == 1) {
+        str += char
+      }
+      else {
+      if (i == 1 || n == 1 || n == w || i == h) {
+        str += char
+      } else {
+        str += ' '
+      }
+    }
+    }
+      str += "\n"
+    } console.log(str)
+</script>
+<script id="ch0105/43">
+  var n= Number(prompt())
+    for (var i = 2; i <= n / 2; i++) {
+      if (n % i == 0) {
+        var x = n / i
+        break
+      }
+      }
+      console.log(x)
+</script>
+<script id="ch0105/44">
+   var n = Number(prompt())
+   var sum = 0
+    for (var i = 2; ; i++) {
+      var ok = true
+      for (var j = 2; j <= Math.sqrt(i); j++) {
+        if (i % j == 0) {
+          ok = false
+          break
+        }
+      }
+      if (ok) {
+        sum++
+      }
+      if (n == sum) {
+        console.log(i)
+        break
+      }
+    }
+</script>
+<script id="ch0105/45">
+  var n = Number(prompt())
+  var sum = 0
+  var day = 0
+  var coin = 1
+  for (var i = 1; i <= n; i++) {
+    sum += coin
+    day++
+   if (coin == day) {
+      coin++
+      day = 0
+    }
+  }
+    console.log(sum)
 </script>
 </body>
 
