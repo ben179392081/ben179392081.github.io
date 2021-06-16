@@ -774,6 +774,7 @@
       break
     }
   }
+      console.log(i)
 </script>
 <script script id="ch0105/28">
   var n = +(prompt(""))
@@ -817,10 +818,21 @@
 <script script id="ch0105/31">
   var n = +(prompt(""))
   var m = +(prompt(""))
-      for (var i = 1; i <= n; i++) {
-        for (var j = 1; j <= m; j++) {
-
-        }
+    var ok = false
+    for (var i = 1; i <= n; i++) {
+    var light = true
+    for (var j = 1; j <= m && j <= i; j++) {
+      if (i % j == 0) {
+        light = !light
+      }
+    }
+    if (light == false) {
+      if (ok) {
+        console.log(",")
+      }
+      console.log(i)
+      ok = true
+    }
   }
 
 </script>
@@ -962,6 +974,7 @@
   var h = Number(prompt())
   var char = prompt()
   var fill = Number(prompt())
+                                        var str = ''
   for (var i = 1; i <= h; i++) {
     for (var n = 1; n <= w; n++) {
       if (fill == 1) {
@@ -1022,6 +1035,51 @@
     }
   }
     console.log(sum)
+</script>
+<script id="narcissistic">
+  var n = Number(prompt())
+  function narcissistic(n) {
+    var digit = n % 10
+    var digit1 = (n - digit) / 10 % 10
+    var digit2 = (n - digit1 * 10 - digit) / 100
+    var sum = digit * digit * digit + digit1 * digit1 * digit1 + digit2 * digit2 * digit2
+    if (sum == n) {
+      return true
+    } else {
+      return false
+    }
+  }
+  console.log(narcissistic(n))
+</script>
+<script id="narcissistics">
+  function narcissistic(n) {
+    for (var n = 100; n < 1000; n++) {
+      var digit = n % 10
+      var digit1 = (n - digit) / 10 % 10
+      var digit2 = (n - digit1 * 10 - digit) / 100
+      var sum = digit * digit * digit + digit1 * digit1 * digit1 + digit2 * digit2 * digit2
+      if (sum == n) {
+        console.log(n)
+      }
+    }
+    return
+  }
+  console.log(narcissistic())
+</script>
+<script id="narcissistic">
+  var n = Number(prompt())
+  function palindrom(n) {
+    var digit = n % 10
+    var digit1 = (n - digit) / 10 % 10
+    var digit2 = (n - digit1 * 10 - digit) / 100
+    var sum = digit * digit * digit + digit1 * digit1 * digit1 + digit2 * digit2 * digit2
+    if (sum == n) {
+      return true
+    } else {
+      return false
+    }
+  }
+  console.log(narcissistic(n))
 </script>
 </body>
 
