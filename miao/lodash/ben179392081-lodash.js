@@ -74,6 +74,21 @@ var ben179392081 = {
       }
     }
     return temp
+  },
+  fill: function (array, value, start = 0, end = array.length) {
+    var res = []
+    for (var i = 0; i < array.length; i++) {
+      if (i == start && start <= end - 1) {
+        res.push(value)
+        start++
+      } else {
+        res.push(array[i])
+      }
+    }
+    return res
+  },
+  filter: function (collection,) {
+
   }
 
 }
