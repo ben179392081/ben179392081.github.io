@@ -8,7 +8,35 @@
   <title>Document</title>
 </head>
 <script>
-  var foobar = { chunk: function () { } }
+var foobar = {
+  chunk: function (array, size = 1) {
+  var temp = new Array(Math.ceil(array.length / size))
+  var a = 0
+  for (var i = 0; i < array.length; i++) {
+      temp[a] ? temp[a] : temp[a] = []
+      temp[a].push(array[i])
+      if (temp[a].length == size) {
+            a++
+      }
+  }
+        return temp
+  },
+  compact:function(array){
+    var temp=[]
+    var tempIndex = 0 
+    for(var i = 0 ; i <array.length ; i++ ){
+      var value = array[i]
+      if(value){
+        temp[tempIndex++] = value
+      }
+    }
+    return temp
+  },
+  
+
+
+}
+
 </script>
 
 <body>
