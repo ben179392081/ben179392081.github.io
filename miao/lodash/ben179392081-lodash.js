@@ -50,7 +50,7 @@ var ben179392081 = {
         res.push(item)
       }
     });
-    return res
+    return [...res]
   },
   flatten: function (array) {
     var temp = []
@@ -87,8 +87,6 @@ var ben179392081 = {
     }
     return res
   },
-  filter: function (collection,) {
 
-  }
 
 }
