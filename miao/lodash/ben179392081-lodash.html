@@ -41,8 +41,16 @@ var foobar = {
       }
     }
     return temp
-  }
-
+  },
+  uniq: function (array) {
+    var temp = []
+    for (var i = 0; i < array.length; i++) {
+      if (!temp.includes(array[i])) {
+        temp.push(array[i])
+      }
+    }
+    return temp
+  },
 
 }
 
