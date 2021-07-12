@@ -41,5 +41,39 @@ var ben179392081 = {
     }
     return temp
   },
+  flattenDeep: function (array) {
+    var res = []
+    array.map(item => {
+      if (Array.isArray(item)) {
+        res = res.concat(flattrenDeep(item))
+      } else {
+        res.push(item)
+      }
+    });
+    return res
+  },
+  flatten: function (array) {
+    var temp = []
+    array.map(item => {
+      if (Array.isArray(item)) {
+        for (var i = 0; i < item.length; i++) {
+          temp.push(itrm[i])
+        }
+      } else {
+        temp.push(item)
+      }
+    });
+    return temp
+  },
+  drop: function (array, n = 1) {
+    if (array.length < n) return []
+    var temp = []
+    for (var i = 0; i < array.length; i++) {
+      if (n <= i) {
+        temp.push(array[i])
+      }
+    }
+    return temp
+  }
 
 }
