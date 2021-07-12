@@ -45,7 +45,7 @@ var ben179392081 = {
     var res = []
     array.map(item => {
       if (Array.isArray(item)) {
-        res = res.concat(flattrenDeep(item))
+        res = res.concat(flattenDeep(item))
       } else {
         res.push(item)
       }
@@ -57,7 +57,7 @@ var ben179392081 = {
     array.map(item => {
       if (Array.isArray(item)) {
         for (var i = 0; i < item.length; i++) {
-          temp.push(itrm[i])
+          temp.push(item[i])
         }
       } else {
         temp.push(item)
