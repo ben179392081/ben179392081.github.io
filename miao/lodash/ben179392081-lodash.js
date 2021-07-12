@@ -1,32 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<script>
 var foobar = {
   chunk: function (array, size = 1) {
-  var temp = new Array(Math.ceil(array.length / size))
-  var a = 0
-  for (var i = 0; i < array.length; i++) {
+    var temp = new Array(Math.ceil(array.length / size))
+    var a = 0
+    for (var i = 0; i < array.length; i++) {
       temp[a] ? temp[a] : temp[a] = []
       temp[a].push(array[i])
       if (temp[a].length == size) {
-            a++
+        a++
       }
-  }
-        return temp
+    }
+    return temp
   },
-  compact:function(array){
-    var temp=[]
-    var tempIndex = 0 
-    for(var i = 0 ; i <array.length ; i++ ){
+  compact: function (array) {
+    var temp = []
+    var tempIndex = 0
+    for (var i = 0; i < array.length; i++) {
       var value = array[i]
-      if(value){
+      if (value) {
         temp[tempIndex++] = value
       }
     }
@@ -53,11 +43,3 @@ var foobar = {
   },
 
 }
-
-</script>
-
-<body>
-
-</body>
-
-</html>
