@@ -32,7 +32,16 @@ var foobar = {
     }
     return temp
   },
-  
+  difference: function (array, ...value) {
+    var arr = [].concat(...value)
+    var temp = []
+    for (var i = 0; i < array.length; i++) {
+      if (!arr.includes(array[i])) {
+        temp.push(array[i])
+      }
+    }
+    return temp
+  }
 
 
 }
