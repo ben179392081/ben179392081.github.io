@@ -75,6 +75,16 @@ var ben179392081 = {
     }
     return temp
   },
+  dropRight: function (array, n = 1) {
+    if (array.length < n) return []
+    var temp = []
+    for (var i = 0; i < array.length; i++) {
+      if (i < array.length - n) {
+        temp.push(array[i])
+      }
+    }
+    return temp
+  },
   fill: function (array, value, start = 0, end = array.length) {
     var res = []
     for (var i = 0; i < array.length; i++) {
