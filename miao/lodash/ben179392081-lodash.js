@@ -1,4 +1,4 @@
-var foobar = {
+var ben179392081 = {
   chunk: function (array, size = 1) {
     var temp = new Array(Math.ceil(array.length / size))
     var a = 0
