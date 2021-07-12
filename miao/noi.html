@@ -1037,49 +1037,172 @@
     console.log(sum)
 </script>
 <script id="narcissistic">
-  var n = Number(prompt())
-  function narcissistic(n) {
-    var digit = n % 10
-    var digit1 = (n - digit) / 10 % 10
-    var digit2 = (n - digit1 * 10 - digit) / 100
-    var sum = digit * digit * digit + digit1 * digit1 * digit1 + digit2 * digit2 * digit2
-    if (sum == n) {
-      return true
-    } else {
-      return false
+   var n = Number(prompt())
+
+    function digitWidth(n) {
+      var sum = 0
+      var digit = 0
+      do {
+        digit = n % 10
+        sum++
+        n = (n - digit) / 10
+      } while (n)
+      return sum
     }
-  }
-  console.log(narcissistic(n))
+    function power(a, b) {
+      var sum = 1
+      for (var i = 0; i < b; i++) {
+        sum *= a
+      } return sum
+    }
+    function narcissistics(n) {
+      var width = digitWidth(n)
+      var digit = 0
+      var sum = 0
+      var m = n
+      do {
+        digit = n % 10
+        sum += power(digit, width)
+        n = (n - digit) / 10
+      } while (n)
+      return sum == m
+    }
+    console.log(narcissistics(n));
 </script>
 <script id="narcissistics">
-  function narcissistic(n) {
-    for (var n = 100; n < 1000; n++) {
-      var digit = n % 10
-      var digit1 = (n - digit) / 10 % 10
-      var digit2 = (n - digit1 * 10 - digit) / 100
-      var sum = digit * digit * digit + digit1 * digit1 * digit1 + digit2 * digit2 * digit2
-      if (sum == n) {
-        console.log(n)
+
+  function digitWidth(n) {
+    var sum = 0
+    var digit = 0
+    do {
+      digit = n % 10
+      sum++
+      n = (n - digit) / 10
+    } while (n)
+    return sum
+  }
+  function power(a, b) {
+    var sum = 1
+    for (var i = 0; i < b; i++) {
+      sum *= a
+    } return sum
+  }
+    function narcissistics(n) {
+      var width = digitWidth(n)
+      var digit = 0
+      var sum = 0
+      var m = n
+      do {
+        digit = n % 10
+        sum += power(digit, width)
+        n = (n - digit) / 10
+      } while (n)
+      return sum == m
+  }
+
+  function main() {
+    for (var i = 1; i < 10000; i++) {
+      if (narcissistics(i)) {
+        console.log(i)
       }
     }
-    return
+
   }
-  console.log(narcissistic())
-</script>
-<script id="narcissistic">
+    main()
+
+  </script>
+
+<script id="palindrom">
   var n = Number(prompt())
-  function palindrom(n) {
-    var digit = n % 10
-    var digit1 = (n - digit) / 10 % 10
-    var digit2 = (n - digit1 * 10 - digit) / 100
-    var sum = digit * digit * digit + digit1 * digit1 * digit1 + digit2 * digit2 * digit2
-    if (sum == n) {
-      return true
-    } else {
-      return false
-    }
+  function palindrom(x) {
+    var sum = 0
+    var digit = 0
+    var m = n
+    do {
+      digit = n % 10
+      sum = sum * 10 + digit
+      n = (n - digit) / 10
+    } while (n)
+    return sum == m
   }
-  console.log(narcissistic(n))
+  console.log(palindrom(n))
+
+</script>
+<script id="complete-number">
+  var n = Number(prompt())
+    function complete(n) {
+      var sum = 0
+    var m = n
+    for (var i = 1; i <= n / 2; i++){
+      if(n % i == 0){
+        sum += i
+      }
+    }  return sum == m
+  }
+  console.log(complete(n))
+</script>
+<script id="complete-numbers">
+  function completes(n) {
+    var sum = 0
+    var m = n
+    for (var i = 1; i <= n / 2; i++) {
+      if (n % i == 0) {
+        sum += i
+      }
+    } return sum == m
+  }
+  for (var i = 1; i < 1000; i++)
+    if (completes(i)) {
+      console.log(i)
+    }
+</script>
+<script id="prime">
+  function prime(n) {
+    for (var i = 2; i < n; i++) {
+      if (n % i == 0) {
+        return false
+      }
+
+    } return true
+  }
+  for (var i = 2; i < 1000; i++)
+    if (prime(i)) {
+      console.log(i)
+    }
+</script>
+<script id="primes">
+  var n = Number(prompt())
+  function prime(n) {
+    for (var i = 2; i < n; i++) {
+      if (n % i == 0) {
+        return false
+      }
+
+    } return true
+  }
+  console.log(prime(n))
+</script>
+<script id="lcf & lcm">
+    var a = Number(prompt())
+    var b = Number(prompt())
+    function lcm(a, b) {
+      return a * b / lcf(a, b)
+    }
+    function lcf(a, b) {
+      if (a > b) {
+        var c = a
+        a = b
+        b = c
+      }
+      do {
+        var digit = a % b
+        a = b
+        b = digit
+      } while (digit > 0)
+      return a
+
+    }
+    console.log(lcf(a, b), lcm(a, b))
 </script>
 </body>
 
