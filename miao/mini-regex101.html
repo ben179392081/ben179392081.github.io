@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  em {
+    background-color: #9fcfff;
+    font-style: normal;
+  }
+
+  em:nth-of-type(even) {
+    background-color: #d5ebff;
+  }
+
+  pre {
+    position: absolute;
+    overflow: hidden;
+  }
+
+  textarea {
+    position: absolute;
+    z-index: 8;
+    background-color: transparent;
+    overflow-y: scroll;
+
+  }
+
+  section {
+    position: relative;
+    width: 300px;
+    height: 200px;
+  }
+
+  #reg {
+    width: 300px;
+    margin-left: 5px;
+  }
+
+  textarea,
+  pre {
+    width: 300px;
+    height: 200px;
+    margin: 5px;
+    border: 1px solid;
+    padding: 5px;
+    font-family: consolas;
+    font-size: 16px;
+    white-space: pre-wrap;
+
+    word-break: break-all;
+  }
+</style>
+正则
+<label><input type="checkbox" onclick="run()" id="ignoreCase">i</label>
+<label><input type="checkbox" onclick="run()" id="global">g</label>
+<label><input type="checkbox" onclick="run()" id="multiline">m</label>
+<br>
+<input type="text" id="reg" onkeyup="run()" value="foo"> <br>
+输入内容
+<section>
+  <textarea name="" id="strInput" onkeyup="run()" cols="30" rows="10">foofffffffffffffoooofooofofofooooooo</textarea>
+  <pre id="result"></pre>
+</section>
+
+
+<script>
+
+  function run() {
+    var regSorce = reg.value
+    var flags = getFlags()
+    var re = new RegExp(regSorce, flags)
+    var str = strInput.value
+
+    var match
+    if (re.global) {
+      var resultHtmL = ''
+      var lastIndex = re.lastIndex
+      while (match = re.exec(str)) {
+        resultHtmL += str.slice(lastIndex, match.index)
+        resultHtmL += '<em>' + match[0] + '</em>'
+        lastIndex = re.lastIndex
+      }
+      resultHtmL += str.slice(lastIndex)
+      result.innerHTML = resultHtmL
+    }
+    else {
+      var resultHtmL = ''
+      match = re.exec(str)
+      resultHtmL += str.slice(0, match.index)
+      resultHtmL += '<em>' + match[0] + '</em>'
+      resultHtmL += str.slice(match[0].length + match.index)
+      result.innerHTML = resultHtmL
+    }
+  }
+
+  function getFlags() {
+    var flags = ''
+    if (ignoreCase.checked) {
+      flags += 'i'
+    }
+    if (global.checked) {
+      flags += 'g'
+    }
+    if (multiline.checked) {
+      flags += 'm'
+    }
+    return flags
+  }
+</script>
+
+
+
+<body>
+
+</body>
+
+</html>
