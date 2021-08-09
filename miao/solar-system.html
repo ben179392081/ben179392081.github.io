@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  #sun,
+  #earth,
+  #moon {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+  }
+
+  #sun {
+    background-image: url(images/sun1.png);
+    background-size: cover;
+  }
+
+  #earth {
+    width: 30px;
+    height: 30px;
+    background-image: url(images/earth.png);
+    background-size: cover;
+
+
+  }
+
+  #moon {
+    width: 10px;
+    height: 10px;
+    background-image: url(images/moon.png);
+    background-size: cover;
+  }
+</style>
+
+<body>
+  <div id="sun"></div>
+  <div id="earth"></div>
+  <div id="moon"></div>
+  <script>
+    var sun = document.querySelector("#sun")
+    var earth = document.querySelector("#earth")
+    var moon = document.querySelector("#moon")
+    var angle1 = 0
+    var angle2 = 0
+    var angle3 = 0
+    requestAnimationFrame(function animate(time) {
+      angle1 = time * 0.0001
+      angle2 = time * 0.001
+      angle3 = time * 0.003
+      var x1 = Math.sin(angle1) * 150 + 250
+      var y1 = Math.cos(angle1) * 150 + 250
+      var x2 = Math.sin(angle2) * 100 + x1
+      var y2 = Math.cos(angle2) * 100 + y1
+      var x3 = Math.sin(angle3) * 30 + x2
+      var y3 = Math.cos(angle3) * 30 + y2
+      sun.style.top = x1 + "px"
+      sun.style.left = y1 + "px"
+      earth.style.top = x2 + "px"
+      earth.style.left = y2 + "px"
+      moon.style.top = x3 + "px"
+      moon.style.left = y3 + "px"
+      requestAnimationFrame(animate)
+    })
+  </script>
+</body>
+
+</html>
