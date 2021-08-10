@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  div {
+    width: 20px;
+    height: 20px;
+    background-color: skyblue;
+    position: absolute;
+  }
+</style>
+
+<body>
+  <div style="left:50px;top:50px"></div>
+  <script>
+    var div = document.querySelector('div')
+    var left = false
+    var right = false
+    var upPress = false
+    var downPress = false
+    var v = 0
+    var vy = 0
+    document.addEventListener('keydown', function (e) {
+      if (e.key == "ArrowRight") {
+        v = 1
+        right = true
+      }
+      if (e.key == "ArrowLeft") {
+        v = -1
+        left = true
+      }
+      if (e.key = 'ArrowUp') {
+        vy = -1
+        upPress = true
+      }
+      if (e.key = 'ArrowDown') {
+        vy = 1
+        downPress = true
+      }
+    })
+    document.addEventListener('keyup', function (e) {
+
+      if (e.key == 'ArrowRight') {
+        right = false
+        if (left) {
+          v = -1
+        } else {
+          v = 0
+        }
+      }
+      if (e.key == 'ArrowLeft') {
+        left = false
+        if (right) {
+          console.log(1)
+          v = 1
+        } else {
+          v = 0
+        }
+      }
+      if (e.key == 'ArrowUp') {
+
+        upPress = false
+        if (downPress) {
+          console.log(1);
+          vy = 1
+        } else {
+          vy = 0
+        }
+      }
+      if (e.key == 'ArrowDown') {
+
+        downPress = false
+        if (upPress) {
+          console.log(2)
+          vy = -1
+        } else {
+          vy = 0
+        }
+      }
+    })
+    requestAnimationFrame(function move(time) {
+      div.style.left = parseInt(div.style.left) + v + 'px'
+      div.style.top = parseInt(div.style.top) + vy + 'px'
+      requestAnimationFrame(move)
+    })
+
+  </script>
+
+</body>
+
+</html>
