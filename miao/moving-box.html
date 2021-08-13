@@ -14,10 +14,17 @@
     background-color: skyblue;
     position: absolute;
   }
+   section {
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    position: absolute;
+  }
 </style>
 
 <body>
-  <div style="left:50px;top:50px"></div>
+  <div style="left:2px;top:20px"></div>
+  <section style="left:20px;top:40px"></section>
   <script>
     var div = document.querySelector('div')
     var left = false
@@ -35,11 +42,13 @@
         v = -1
         left = true
       }
-      if (e.key = 'ArrowUp') {
+      if (e.key == "ArrowUp") {
+        console.log(2);
         vy = -1
         upPress = true
       }
-      if (e.key = 'ArrowDown') {
+      if (e.key == "ArrowDown") {
+        console.log(1);
         vy = 1
         downPress = true
       }
@@ -64,32 +73,93 @@
         }
       }
       if (e.key == 'ArrowUp') {
-
         upPress = false
         if (downPress) {
-          console.log(1);
           vy = 1
         } else {
           vy = 0
         }
       }
       if (e.key == 'ArrowDown') {
-
         downPress = false
         if (upPress) {
-          console.log(2)
           vy = -1
         } else {
           vy = 0
         }
       }
     })
-    requestAnimationFrame(function move(time) {
-      div.style.left = parseInt(div.style.left) + v + 'px'
-      div.style.top = parseInt(div.style.top) + vy + 'px'
+    var section = document.querySelector('section')
+      var left2 = false
+      var right2 = false
+      var upPress2 = false
+      var downPress2 = false
+      var vx2 = 0
+      var vy2 = 0
+      document.addEventListener('keydown', function (e) {
+        if (e.key == 'd') {
+          right2 = true
+          vx2 = 1
+        }
+        if (e.key == 'a') {
+          left2 = true
+          vx2 = -1
+        }
+        if (e.key == 'w') {
+          upPress2 = true
+          vy2 = -1
+        }
+        if (e.key == 's') {
+          downPress2 = true
+          vy2 = 1
+        }
+      })
+      document.addEventListener('keyup', function (e) {
+        if (e.key == 'd') {
+          right2 = false
+          if (left2) {
+            vx2 = -1
+          } else {
+            vx2 = 0
+          }
+        }
+        if (e.key == 'a') {
+          left2 = false
+          if (right2) {
+            vx2 = 1
+          } else {
+            vx2 = 0
+          }
+        }
+        if (e.key == 'w') {
+          upPress2 = false
+          if (downPress2) {
+            vy2 = 1
+          } else {
+            vy2 = 0
+          }
+        }
+        if (e.key == 's') {
+          downPress2 = false
+          if (upPress2) {
+            console.log(2)
+            vy2 = -1
+          } else {
+            vy2 = 0
+          }
+        }
+      })
+    requestAnimationFrame(function move() {
+      div.style.left = parseInt(div.style.left) + v + 'px';
+      div.style.top = parseInt(div.style.top) + vy + 'px';
+      section.style.left = parseInt(section.style.left) + vx2 + 'px';
+      section.style.top = parseInt(section.style.top) + vy2 + 'px';
       requestAnimationFrame(move)
     })
-
+    window.addEventListener('blur', function (e) {
+      v = 0
+      vy = 0
+    })
   </script>
 
 </body>
