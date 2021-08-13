@@ -8,53 +8,52 @@
   <title>Document</title>
 </head>
 <style>
-  * {
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    width: 100%;
-    height: 100%;
-  }
 
   div {
     width: 100px;
     height: 100px;
     background-color: skyblue;
-    position: absolute;
+    position: fixed;
+    user-select: none;
   }
 
-  section {
-    width: 100px;
-    height: 100px;
-    background-color: greenyellow;
-    position: absolute;
-  }
+ 
 </style>
 
 <body>
-  <div style="left:0px;top:0px" id="one"></div>
-  <section style="left:10px;top:0px" id="two"></section>
+  <div class="drag" style="left:0px;top:0px;background: saddlebrown;"></div>
+  <div class="drag" style="left:20px;top:0px;background: red;"></div>
+  <div class="drag" style="left:30px;top:0px;background: gold;"></div>
+
   <script>
-    var one = document.getElementById('one')
-    var two = document.getElementById('two')
-    document.addEventListener('mousedown', function (event) {
+        var maxZindex = 5
+        document.addEventListener('mousedown', function (e) {
       console.log(11);
-      var x = event.clientX
-      var y = event.clientY
-      var x1 = one.offsetLeft
-      var y1 = one.offsetTop
-      var x2 = x1 + one.offsetWidth
-      var y2 = y1 + one.offsetHeight
+        if (!e.target.classList.contains('drag')) {
+          return
+        }
+        var x = e.clientX
+        var y = e.clientY
+        e.target.style.zIndex = maxZindex++
+        var elx = parseFloat(e.target.style.left)
+        var ely = parseFloat(e.target.style.top)
+      
       function move(event) {
-        var moveX = event.clientX - one.offsetLeft
-        var moveY = event.clientY - one.offsetTop
-        if (!(x < x1 || x > x2 || y < y1 || y > y2)) {
-          if (event.which == 1) {
-            one.style.left = parseFloat(one.style.left) + moveX + 'px'
-            one.style.top = parseFloat(one.style.top) + moveY + 'px'
-          }
+        var curx = event.clientX
+        var cury = event.clientY
+        var dx = curx - x
+        var dy = cury - y
+        var left = elx + dx
+        var top = ely + dy
+        if (left < 0) {
+          left = 0
+        }
+        if (top < 0) {
+          top = 0
+        }
+        if (event.which == 1) {
+          event.target.style.left = left + 'px'
+          event.target.style.top = top + 'px'
         }
       }
 
@@ -64,31 +63,7 @@
       })
 
     })
-    document.addEventListener('mousedown', function (event) {
-      console.log(11);
-      var x = event.clientX
-      var y = event.clientY
-      var x1 = two.offsetLeft
-      var y1 = two.offsetTop
-      var x2 = x1 + two.offsetWidth
-      var y2 = y1 + two.offsetHeight
-      function move(event) {
-        var moveX = event.clientX - two.offsetLeft
-        var moveY = event.clientY - two.offsetTop
-        if (!(x < x1 || x > x2 || y < y1 || y > y2)) {
-          if (event.which == 1) {
-            two.style.left = parseInt(two.style.left) + moveX + 'px'
-            two.style.top = parseInt(two.style.top) + moveY + 'px'
-          }
-        }
-      }
 
-      document.addEventListener('mousemove', move)
-      document.addEventListener('mouseup', function () {
-        document.removeEventListener('mousemove', move)
-      })
-
-    })
 
 
 
